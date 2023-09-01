@@ -52,3 +52,17 @@ class Alumno extends Persona{//si tenemos un constructor de la case padre sobree
 
 }
 
+class Extendida {
+  String? nombre;
+  String? apellido;
+  String? dni;
+  int? edad; // y supongamos que tenemos muchisimos atributos que queremos en el contructor
+
+  Extendida(this.nombre, this.apellido, this.dni, this.edad); // de esta manera evitamos hacer this.atributo = atributo(del parametro del constructor)
+
+  String presentacion(){
+    return '${this.nombre}, ${this.apellido}, ${this.dni}, ${this.edad}';
+  }
+
+}
+

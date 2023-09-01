@@ -16,12 +16,16 @@ void main(){
   var letra = 'a'; letra = 'b'; // no recomendable
   String? nombre = "Cristian"; var apellido = "Gramajo";
   int edad = 28; var vacio = null; // las variables de tipo var no pueden ser null safety
+  double altura = 1.62;
+  num cualquiera = 2.54;
   description = 'Feijoada!';
   nombre = null;
   const double PI = 3.14; // cosntante en tiempo de compilacion (son implicitamente final type), pueden ser tipadas o no
   //is at the class level, mark it static const
   final name = 'Bob'; // no tipada, son como constantes ya que no podemos cambiar su valor
   final String nickname = 'Bobby';
+
+  final runes = nickname.runes.toList(); // arreglo de caracteres ascii / unicode value: [1,62,35,...]
 
   
 
@@ -30,6 +34,7 @@ void main(){
   List<int> fixedList = List.of([1, 2, 3], growable: false);
   //fixedList.add(4); // throws an error
   List<int> listEx = []; listEx.add(341); listEx.add(1); listEx.add(23); // tipo de dato lista con generico entero, solo acepta enteros
+  List<dynamic> lista_cualquiera = [1,2.5,"a"]; // recibe cualquier typo de dato
 
   Set<String> set1 = {"Cloud", "Vincent", "Cloud"};// no admite el ultimo Cloud, duplicado.
   Set<String> set2 = {"Vincent", "A","B"};
@@ -78,7 +83,7 @@ void main(){
   Queue<int> q = new Queue<int>(); // <dynamic> por defecto /*ListQueue should be used every time you want to avoid a programmer making an insertion in the middle of a list*/
   q.addLast(1); q.addLast(2); q.addFirst(3); q.addLast(4); q.removeFirst(); //[1,2,4]
 
-
+  print("EL TIPO DE DATO DE cualquiera es: ${cualquiera.runtimeType}");
   print('Hola mi nombre es ${nombre}, y mi apellido es ${apellido}, tengo ${edad-1}, vacio: ${vacio}');
   print(final_arr);
   print(int_arr);
